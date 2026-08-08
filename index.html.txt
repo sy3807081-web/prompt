@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MailMind - AI Email Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">📧 MailMind</div>
+
+        <p>AI-Powered Email Assistant</p>
+    </header>
+
+
+    <main>
+
+        <section class="input-section">
+
+            <h1>Analyze Your Email</h1>
+
+            <textarea
+                id="emailInput"
+                placeholder="Paste your email here..."></textarea>
+
+            <button onclick="analyzeEmail()">
+                🤖 Analyze Email
+            </button>
+
+        </section>
+
+
+        <section id="results" class="results hidden">
+
+            <h2>AI Analysis</h2>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>🚨 Priority</h3>
+                    <p id="priority">-</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>📂 Category</h3>
+                    <p id="category">-</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>🛡️ Spam Check</h3>
+                    <p id="spam">-</p>
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>📝 Summary</h3>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>✅ Tasks</h3>
+
+                <ul id="tasks"></ul>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>📅 Deadlines</h3>
+
+                <ul id="deadlines"></ul>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>🤖 Suggested Reply</h3>
+
+                <textarea id="reply"></textarea>
+
+                <button onclick="copyReply()">
+                    📋 Copy Reply
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>MailMind © 2026 | AI Email Assistant</p>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
